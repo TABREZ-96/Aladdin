@@ -39,11 +39,11 @@ Ensure the following are installed on your system:
 
 1. Clone the repository:
 
-   ```bash
+   ```
    git clone [https://github.com/your-username/aladdin-app.git](https://github.com/TABREZ-96/Aladdin)
    cd aladdin-app
-```
-```
+    ```
+
 2. ```pip install -r requirements.txt```
 3. # Running the Application
 
