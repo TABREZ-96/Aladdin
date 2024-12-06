@@ -3,6 +3,8 @@ from pathlib import Path
 import openvino_genai as ov_genai
 from llm_config import convert_and_compress_model
 import time
+import openvino as ov
+
 
 # Predefined settings
 MODEL_ID = "gemma-2-9b-it"
@@ -135,6 +137,16 @@ html_code = """
 """
 
 st.markdown(html_code, unsafe_allow_html=True)
+core = ov.Core()
+
+# Retrieve available devices
+available_devices = core.available_devices
+st.markdown("Select Device for Inference")
+DEVICE = st.selectbox(
+    "Choose a device for inference:",
+    options=available_devices,
+    index=available_devices.index("CPU") if "CPU" in available_devices else 0,
+)
 
 
 
